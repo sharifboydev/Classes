@@ -73,8 +73,13 @@ class Talaba(Shaxs):
     def get_bosqich(self):
         return self.bosqich
 
+    def get_info(self):
+        info = f"{self.ism} {self.familiya}."
+        info = f"{self.get_bosqich()} - bosqich. ID raqami: {self.idraqam}"
+        return info
+
 
 talaba = Talaba("Valijon", "Aliyev", "FA112299", 2000, "0000012")
 print(talaba.get_info())
-print(talaba.get_id())
-print(talaba.get_bosqich())
+# print(talaba.get_id())
+# print(talaba.get_bosqich())
