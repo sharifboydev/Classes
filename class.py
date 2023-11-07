@@ -62,9 +62,19 @@ class Shaxs:
 # print(f"{inson.get_inf0()}. {inson.get_age(2023)} yoshda")
 
 class Talaba(Shaxs):
-    def __init__(self, ism, familiya, passport, tyil):
+    def __init__(self, ism, familiya, passport, tyil, idraqam):
         super().__init__(ism, familiya, passport, tyil)
+        self.idraqam = idraqam
+        self.bosqich = 1
+
+    def get_id(self):
+        return self.idraqam
+
+    def get_bosqich(self):
+        return self.bosqich
 
 
-talaba = Talaba("Valijon", "Aliyev", "FA112299", 2000)
-print(talaba.get_age(2023))
+talaba = Talaba("Valijon", "Aliyev", "FA112299", 2000, "0000012")
+print(talaba.get_info())
+print(talaba.get_id())
+print(talaba.get_bosqich())
