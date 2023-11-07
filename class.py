@@ -62,10 +62,11 @@ class Shaxs:
 # print(f"{inson.get_inf0()}. {inson.get_age(2023)} yoshda")
 
 class Talaba(Shaxs):
-    def __init__(self, ism, familiya, passport, tyil, idraqam):
+    def __init__(self, ism, familiya, passport, tyil, idraqam, manzil):
         super().__init__(ism, familiya, passport, tyil)
         self.idraqam = idraqam
         self.bosqich = 1
+        self.manzil = manzil
 
     def get_id(self):
         return self.idraqam
@@ -75,11 +76,29 @@ class Talaba(Shaxs):
 
     def get_info(self):
         info = f"{self.ism} {self.familiya}."
-        info = f"{self.get_bosqich()} - bosqich. ID raqami: {self.idraqam}"
+        info += f"{self.get_bosqich()} - bosqich. ID raqami: {self.idraqam}"
         return info
 
 
-talaba = Talaba("Valijon", "Aliyev", "FA112299", 2000, "0000012")
-print(talaba.get_info())
+# talaba = Talaba("Valijon", "Aliyev", "FA112299", 2000, "0000012")
+# print(talaba.get_info())
 # print(talaba.get_id())
 # print(talaba.get_bosqich())
+
+class Manzil:
+    def __init__(self, uy, kocha, tuman, viloyat):
+        self.uy = uy
+        self.kocha = kocha
+        self.tuman = tuman
+        self.viloyat = viloyat
+
+    def get_manzil(self):
+        manzil = f"{self.viloyat} viloyati {self.tuman} tumani, "
+        manzil += f"{self.kocha} ko'chasi, {self.uy} - uy"
+        return manzil
+
+
+talaba_manzil = Manzil(12, 'Olmazor', 'Bogbon', 'Samarqand')
+talaba = Talaba("Valijon", "Valiyev", "FA112299", 2000, '00000012', talaba_manzil)
+
+print(talaba.manzil.get_manzil())
